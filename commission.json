@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "full_name": "Hon. (Engr) Kayode Fasakin",
+    "gender": "Male",
+    "date_of_birth": "1968-08-25",
+    "user_avatar": "assets/image/team/chairman-service-commission.jpg",
+    "email_address": "kayodeajayifasakin@gmail.com",
+    "professional_cert": "Post-Graduate Diploma (PGD) Civil Engineering (2005); HND Civil Engineering (2000) ",
+    "current_position": "Executive Chairman, Service Commission",
+    "committees": "",
+    "political_xp": "Commissioner, Ekiti State House of Assembly; Member Ekiti State House of Assembly (2011 - 2015); Chief Whip, Ekiti State House of Assembly (2013 - 2015)"
+  },
+  {
+    "id": 2,
+    "full_name": "HON. TAIWO DAVID ROTIMI",
+    "gender": "Male",
+    "date_of_birth": "1963-04-22",
+    "user_avatar": "assets/image/team/HON. DAVID TAIWO.jpg",
+    "email_address": "davidtaiwo1963@gmail.com",
+    "professional_cert": "Grade II Teachers Certificate (1986); B.Sc (Ed) Hons (1995)",
+    "current_position": "Commissioner, House of Assembly Service Commission",
+    "committees": "Chairman, Works and Infrastructure Committee; Member, ESTAB Personnel Committee",
+    "political_xp": "Councillor/Supervisor for Health (Ado-Ekiti LG, 1997-1998); Member, Ekiti State House of Assembly (2007-2011); Member, Board of Directors, Ekiti State Housing Corporation (2011-2014)"
+  },
+  {
+    "id": 3,
+    "full_name": "HON. (MRS) FOLA RICHIE-ADEWUSI",
+    "gender": "Female",
+    "date_of_birth": "1962-09-12",
+    "user_avatar": "assets/image/team/HON. MRS FOLA RICHIE ADEWUSI.jpeg",
+    "email_address": "folarichieadewusi@gmail.com",
+    "professional_cert": "MA in Educational Leadership (in view); MA Family Planning Programme Administration (Exeter, UK, 1991); BA (Ed) English Education (OAU Ife, 1985)",
+    "current_position": "Board Member",
+    "committees": "Chair, Committee on Personnel Establishment & Training; Chair, Committee on Training & Manpower Development",
+    "political_xp": "Hon. Commissioner for Women Affairs Social Development & Gender Empowerment; Hon. Commissioner for Information Communication & Strategy; Chair, Teaching Service Commission"
+  },
+  {
+    "id": 4,
+    "full_name": "HON. IPINLAYE ABIDEMI MAYOWA",
+    "gender": "Male",
+    "date_of_birth": "1975-03-30",
+    "user_avatar": "assets/image/team/IPINLAYE ABIDEMI.jpg",
+    "email_address": "ipinlayeabidemi2@gmail.com",
+    "professional_cert": "",
+    "current_position": "Commissioner",
+    "committees": "Establishment and Personnel Matters committee (Oct 2023 – Present)",
+    "political_xp": "Secretary to Ikole Local Government (Nov 2014 – Dec 2017)"
+  },
+  {
+    "id": 5,
+    "full_name": "HON. OLAJIDE OLANIYI",
+    "gender": "Male",
+    "date_of_birth": "1973-08-01",
+    "user_avatar": "assets/image/team/HON. OLAJIDI OLANIYI.jpg",
+    "email_address": "olaniyiolajide@gmail.com",
+    "professional_cert": "HND; MPA (in view)",
+    "current_position": "Commissioner",
+    "committees": "Chairman, Committee of Public Account; Vice-Chairman, Committee on Information; Member, House Committee on Local Government",
+    "political_xp": "Legislative Aide, National Assembly Commission; Member, House of Assembly (2011–2015); Commissioner, Ekiti State House of Assembly Service Commission (Oct 2023 – Present)"
+  },
+  {
+    "id": 6,
+    "full_name": "HON. AJIDARA SAMUEL ROTIMI",
+    "gender": "Male",
+    "date_of_birth": "1974-09-26",
+    "user_avatar": "assets/image/team/HON AJIDARA SAMUEL ROTIMI.jpg",
+    "email_address": "ajidarasamuel@gmail.com",
+    "professional_cert": "B.Sc Economics",
+    "current_position": "Commissioner",
+    "committees": "Chairman, Committee on Welfare & Disciplinary; Member, Committee on Information & Protocol",
+    "political_xp": "Former Member, Ekiti State House of Assembly; Former Chairman, Ekiti State Local Government (Omuo Ekiti); Former Senior Special Assistant to the Governor"
+  },
+  {
+    "id": 7,
+    "full_name": "HON. AKINTUNDE FAMOYEKUN",
+    "gender": "Male",
+    "date_of_birth": "1954-09-06",
+    "user_avatar": "assets/image/team/HON. AKINTUNDE FAMOYEGUN.jpg",
+    "email_address": "benakin2000@yahoo.com",
+    "professional_cert": "B.Sc (Hons) Political Science; MPA; Dip. Theology",
+    "current_position": "Commissioner",
+    "committees": "Committee on Budget, Planning and Statistics",
+    "political_xp": "Clerk, Ekiti State House of Assembly (2003–2005, 2008–2013); Secretary, Committee on Additional Creation of Local Government Development Area"
+  },
+  {
+    "id": 8,
+    "full_name": "AFOLABI FRANCIS TOLULOPE",
+    "gender": "Male",
+    "date_of_birth": "1969-03-03",
+    "user_avatar": "assets/image/team/MR TOLULOPE AFOLABI.jpeg",
+    "email_address": "tolulabi2004@yahoo.co.uk",
+    "professional_cert": "MSc Peace Studies/Conflict Resolution",
+    "current_position": "Executive Secretary",
+    "committees": "",
+    "political_xp": ""
+  }
+]

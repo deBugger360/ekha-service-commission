@@ -1,60 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Gallery | Ekiti State House of Assembly Service Commission</title>
-	<!-- google font -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-	<!-- plugins css -->
-	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/reey-font/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/flaticon/css/flaticon_towngov.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/owl-carousel/owl.carousel.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
-	<link rel="stylesheet" href="assets/vendor/youtube-popup/youtube-popup.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-	<!-- favicons Icons -->
-	<link rel="apple-touch-icon" sizes="180x180" href="assets/image/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="assets/image/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="assets/image/favicon/favicon-16x16.png">
-	<link rel="manifest" href="assets/image/favicon/site.webmanifest">
-	<style>
-		.members-list {
-			margin-bottom: 30px;
-		}
-		.page-banner.service-commission {
-			background-image: url("assets/image/bg/service-commission-herobg.png") !important;
-			background-repeat: no-repeat;
-			background-color: var(--thm-black);
-			background-size: cover;
-			padding-top: 122px;
-			padding-bottom: 122px;
-			background-position-y: 50%;
-		}
-		.gallery {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 15px; /* Adjust spacing between items */
-		}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery | Ekiti State House of Assembly Service Commission</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <!-- plugins css -->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/reey-font/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/flaticon/css/flaticon_towngov.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/youtube-popup/youtube-popup.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   <!-- photoswipe (local files to avoid CDN MIME/CORS issues) -->
+    <link rel="stylesheet" href="assets/vendor/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="assets/vendor/photoswipe/photoswipe-dynamic-caption-plugin.css">
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/image/favicon/site.webmanifest">
+    <style>
+        .page-banner.service-commission {
+        background-image: url("assets/image/bg/service-commission-herobg.png") !important;
+        background-repeat: no-repeat;
+        background-color: var(--thm-black);
+        background-size: cover;
+        padding-top: 122px;
+        padding-bottom: 122px;
+        background-position-y: 50%;
+    }
 
-		.gallery-item {
-			flex: 1 1 calc(33.333% - 15px); /* 3 items per row */
-			box-sizing: border-box;
-		}
+    /* Recommended: responsive CSS Grid gallery for consistent thumbnails */
+    .gallery {
+        display: grid;
+        /* default: 1..3 columns depending on viewport */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        align-items: stretch;
+    }
 
-		.gallery-item img {
-			width: 100%;
-			height: auto;
-			display: block;
-			border-radius: 5px; /* Optional: Rounded corners */
-		}
-	</style>
+    /* Force exactly 4 columns on large screens (Bootstrap lg breakpoint: 992px) */
+    @media (min-width: 992px) {
+        .gallery {
+            grid-template-columns: repeat(5, minmax(220px, 1fr));
+        }
+    }
+
+    .gallery-item {
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #f6f6f6;
+    }
+
+    .gallery-item a {
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* keeps consistent crop/thumbnail */
+        display: block;
+    }
+
+    /* small tweak: make gallery full-width on very small screens */
+    @media (max-width: 400px) {
+        .gallery { gap: 8px; }
+    }
+    </style>
 </head>
 <body>
 <div id="pre-loader">
@@ -65,347 +89,365 @@
 </div><!-- pre-loader -->
 <!-- Header -->
 <header class="header">
-	<div class="topbar">
-		<div class="topbar-inner">
-			<div class="topbar-left">
-				<div class="topbar-socials">
-					<!-- <a href="#"><i class="fa-brands fa-twitter"></i></a>
-					<a href="#"><i class="fa-brands fa-facebook"></i></a>
-					<a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-					<a href="#"><i class="fa-brands fa-instagram"></i></a> -->
-				</div><!--topbar-socials-->
-				<div class="topbar-info">
-					<ul>
-						<li>
-							<div class="topbar-icon">
-								<i class="fa-solid fa-envelope"></i>
-							</div><!-- topbar-icon -->
-							<div class="topbar-text">
-								<a href="mailto:servicecommission@hoa.ek.gov.ng"> servicecommission@hoa.ek.gov.ng</a>
-							</div><!-- topbar-text -->
-						</li><!-- li -->
-						<li>
-							<div class="topbar-icon">
-								<i class="fa-solid fa-clock"></i>
-							</div><!-- topbar-icon -->
-							<div class="topbar-text">
-								<span>Open Hours: Mon - Fri 8.00 am - 5.00 pm</span>
-							</div><!-- topbar-text -->
-						</li><!-- li -->
-					</ul><!-- ul -->
-				</div><!--topbar-info-->
-			</div><!-- topbar-left -->
-			<!-- <div class="topbar-right">
-				<ul>
-					<li><a href="department-details.html">Council</a></li>
-					<li><a href="departments.html">Government</a></li>
-					<li><a href="contact.html">Complaints</a></li>
-				</ul> --> <!-- ul -->
-			</div><!--topbar-right-->
-		</div><!-- topbar-inner -->
-	</div><!--topbar-->
-	<div class="main-menu sticky-header">
-		<div class="main-menu-inner">
-			<div class="main-menu-left">
-				<div class="main-menu-logo">
-					<a href="index.html"><img src="assets/image/ekha-sc-logo.png" alt="img-145" width="200"></a>
-				</div><!--main-menu-logo-->
-				<div class="navigation">
-					<ul class="main-menu-list list-unstyled">
-						<li>
-							<a href="/">Home</a>
-						</li>
-						<li>
-							<a href="about.html">About</a>
-						</li>
-						<li><a href="contact.html">Contact</a>
-						</li>
-						<li class="active"><a href="gallery.html">Gallery</a>
-						</li>
-					</ul><!-- main-menu-list -->
-				</div><!--navigation-->
-			</div><!--main-menu-left-->
-			<div class="main-menu-right">
-				<div class="mobile-menu-button mobile-nav-toggler">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div><!-- mobile-menu-button -->
-				<div class="search-box">
-					<!-- <a href="#" class="search-toggler">
-						<i class="flaticon-search-interface-symbol"></i>
-					</a> //search-toggler 
-				</div> -->
-				<!-- search-box -->
-				<div class="main-menu-right-button">
-					<a href="https://www.hoa.ek.gov.ng/" class="btn btn-primary" target="_blank">Navigate to EKHA</a>
-				</div><!-- main-menu-right-button -->
-			</div><!--main-menu-right-->
-		</div><!--main-menu-inner-->
-	</div><!--main-menu-->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left">
+                <div class="topbar-socials">
+                    <!-- social links -->
+                </div><!--topbar-socials-->
+                <div class="topbar-info">
+                    <ul>
+                        <li>
+                            <div class="topbar-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div><!-- topbar-icon -->
+                            <div class="topbar-text">
+                                <a href="mailto:servicecommission@hoa.ek.gov.ng"> servicecommission@hoa.ek.gov.ng</a>
+                            </div><!-- topbar-text -->
+                        </li><!-- li -->
+                        <li>
+                            <div class="topbar-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div><!-- topbar-icon -->
+                            <div class="topbar-text">
+                                <span>Open Hours: Mon - Fri 8.00 am - 5.00 pm</span>
+                            </div><!-- topbar-text -->
+                        </li><!-- li -->
+                    </ul><!-- ul -->
+                </div><!--topbar-info-->
+            </div><!-- topbar-left -->
+            </div><!--topbar-right-->
+        </div><!-- topbar-inner -->
+    </div><!--topbar-->
+    <div class="main-menu sticky-header">
+        <div class="main-menu-inner">
+            <div class="main-menu-left">
+                <div class="main-menu-logo">
+                    <a href="index.html"><img src="assets/image/ekha-sc-logo.png" alt="img-145" width="200"></a>
+                </div><!--main-menu-logo-->
+                <div class="navigation">
+                    <ul class="main-menu-list list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="active"><a href="gallery.html">Gallery</a></li>
+                    </ul><!-- main-menu-list -->
+                </div><!--navigation-->
+            </div><!--main-menu-left-->
+            <div class="main-menu-right">
+                <div class="mobile-menu-button mobile-nav-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div><!-- mobile-menu-button -->
+                <div class="main-menu-right-button">
+                    <a href="https://www.hoa.ek.gov.ng/" class="btn btn-primary" target="_blank">Navigate to EKHA</a>
+                </div><!-- main-menu-right-button -->
+            </div><!--main-menu-right-->
+        </div><!--main-menu-inner-->
+    </div><!--main-menu-->
 </header>
 <!--header-->
 
 <div class="page-wrapper">
-	<section class="page-banner service-commission">
-		<div class="container">
-			<div class="page-breadcrumbs">
-				<ul class="list-unstyled">
-					<li><a href="index.html">EKHA Service Commission</a></li>
-					<li>Gallery</li>
-				</ul><!-- list-unstyled -->
-			</div><!-- page-breadcrumbs -->
-			<div class="page-banner-title">
-				<h3>Gallery</h3>
-			</div><!-- page-banner-title -->
-		</div><!-- container -->			
-	</section><!--page-banner-->
-	<section class="about-one-section">
-		<div class="container">
-			<div class="row row-gutter-y-40">
-				<div class="col-lg-12 col-xl-6">
-					<div class="about-one-inner">
-						<div class="section-tagline">
-							GALLERY OF 
-						</div><!-- section-tagline -->
-						<h2 class="section-title">The Ekiti State House of Assembly Service Commission</h2>
-						<div class="gallery">
+    <section class="page-banner service-commission">
+        <div class="container">
+            <div class="page-breadcrumbs">
+                <ul class="list-unstyled">
+                    <li><a href="index.html">EKHA Service Commission</a></li>
+                    <li>Gallery</li>
+                </ul><!-- list-unstyled -->
+            </div><!-- page-breadcrumbs -->
+            <div class="page-banner-title">
+                <h3>Gallery</h3>
+            </div><!-- page-banner-title -->
+        </div><!-- container -->			
+    </section><!--page-banner-->
+    <section class="about-one-section">
+        <div class="container">
+            <div class="row row-gutter-y-40">
+                <div class="col-lg-12 col-xl-6">
+                    <div class="about-one-inner">
+                        <div class="section-tagline">
+                            GALLERY OF 
+                        </div><!-- section-tagline -->
+                        <h2 class="section-title">The Ekiti State House of Assembly Service Commission</h2>
+                        <!-- PhotoSwipe v5 gallery (data-pswp-width/height will be set dynamically) -->
+                        <div class="gallery" id="gallery">
                             <div class="gallery-item">
-                              <a href="assets/image/service-commission/sc-img-1.jpg" data-lightbox="gallery" data-image-alt="Image 1">
-                                <img src="assets/image/service-commission/sc-img-1.jpg" alt="Thumbnail 1">
-                              </a>
+                                <a href="assets/image/service-commission/sc-img-1.jpg"
+                                   data-pswp-caption="Commission meeting — Image 1">
+                                    <img src="assets/image/service-commission/sc-img-1.jpg" alt="Commission meeting 1">
+                                </a>
                             </div>
                             <div class="gallery-item">
-                              <a href="assets/image/service-commission/sc-img-2.jpg" data-lightbox="gallery" data-image-alt="Image 2">
-                                <img src="assets/image/service-commission/sc-img-2.jpg" alt="Thumbnail 2">
-                              </a>
+                                <a href="assets/image/service-commission/sc-img-2.jpg"
+                                   data-pswp-caption="Commission members — Image 2">
+                                    <img src="assets/image/service-commission/sc-img-2.jpg" alt="Commission meeting 2">
+                                </a>
                             </div>
                             <div class="gallery-item">
-                              <a href="assets/image/service-commission/sc-img-3.jpg" data-lightbox="gallery" data-image-alt="Image 3">
-                                <img src="assets/image/service-commission/sc-img-3.jpg" alt="Thumbnail 3">
-                              </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-4.jpg" data-lightbox="gallery" data-image-alt="Image 4">
-                              <img src="assets/image/service-commission/sc-img-4.jpg" alt="Thumbnail 4">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-5.jpg" data-lightbox="gallery" data-image-alt="Image 5">
-                              <img src="assets/image/service-commission/sc-img-5.jpg" alt="Thumbnail 5">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-6.jpg" data-lightbox="gallery" data-image-alt="Image 6">
-                              <img src="assets/image/service-commission/sc-img-6.jpg" alt="Thumbnail 6">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-7.jpg" data-lightbox="gallery" data-image-alt="Image 7">
-                              <img src="assets/image/service-commission/sc-img-7.jpg" alt="Thumbnail 7">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-8.jpg" data-lightbox="gallery" data-image-alt="Image 8">
-                              <img src="assets/image/service-commission/sc-img-8.jpg" alt="Thumbnail 8">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-9.jpg" data-lightbox="gallery" data-image-alt="Image 9">
-                              <img src="assets/image/service-commission/sc-img-9.jpg" alt="Thumbnail 9">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-10.jpeg" data-lightbox="gallery" data-image-alt="Image 10">
-                              <img src="assets/image/service-commission/sc-img-10.jpeg" alt="Thumbnail 10">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-11.jpeg" data-lightbox="gallery" data-image-alt="Image 11">
-                              <img src="assets/image/service-commission/sc-img-11.jpeg" alt="Thumbnail 11">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-12.jpeg" data-lightbox="gallery" data-image-alt="Image 12">
-                              <img src="assets/image/service-commission/sc-img-12.jpeg" alt="Thumbnail 12">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-13.jpeg" data-lightbox="gallery" data-image-alt="Image 13">
-                              <img src="assets/image/service-commission/sc-img-13.jpeg" alt="Thumbnail 13">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-14.jpeg" data-lightbox="gallery" data-image-alt="Image 14">
-                              <img src="assets/image/service-commission/sc-img-14.jpeg" alt="Thumbnail 14">
-                            </a>
-                          </div>
-                          <div class="gallery-item">
-                            <a href="assets/image/service-commission/sc-img-15.jpeg" data-lightbox="gallery" data-image-alt="Image 15">
-                              <img src="assets/image/service-commission/sc-img-15.jpeg" alt="Thumbnail 15">
-                            </a>
-                          </div>
-						
-					</div><!-- about-one-inner -->
-				</div><!--col-lg-6-->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!--about-one-section-->
+                                <a href="assets/image/service-commission/sc-img-3.jpg"
+                                   data-pswp-caption="Award presentation — Image 3">
+                                    <img src="assets/image/service-commission/sc-img-3.jpg" alt="Award presentation">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-4.jpg"
+                                   data-pswp-caption="Official visit — Image 4">
+                                    <img src="assets/image/service-commission/sc-img-4.jpg" alt="Official visit">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-5.jpg"
+                                   data-pswp-caption="Office ceremony — Image 5">
+                                    <img src="assets/image/service-commission/sc-img-5.jpg" alt="Office ceremony">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-6.jpg"
+                                   data-pswp-caption="Event — Image 6">
+                                    <img src="assets/image/service-commission/sc-img-6.jpg" alt="Event 6">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-7.jpg"
+                                   data-pswp-caption="Meeting — Image 7">
+                                    <img src="assets/image/service-commission/sc-img-7.jpg" alt="Meeting 7">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-8.jpg"
+                                   data-pswp-caption="Ceremony — Image 8">
+                                    <img src="assets/image/service-commission/sc-img-8.jpg" alt="Ceremony 8">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-9.jpg"
+                                   data-pswp-caption="Group photo — Image 9">
+                                    <img src="assets/image/service-commission/sc-img-9.jpg" alt="Group photo 9">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-10.jpeg"
+                                   data-pswp-caption="Presentation — Image 10">
+                                    <img src="assets/image/service-commission/sc-img-10.jpeg" alt="Presentation 10">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-11.jpeg"
+                                   data-pswp-caption="Awarding — Image 11">
+                                    <img src="assets/image/service-commission/sc-img-11.jpeg" alt="Awarding 11">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-12.jpeg"
+                                   data-pswp-caption="Conference — Image 12">
+                                    <img src="assets/image/service-commission/sc-img-12.jpeg" alt="Conference 12">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-13.jpeg"
+                                   data-pswp-caption="Training Programme — Image 13">
+                                    <img src="assets/image/service-commission/sc-img-13.jpeg" alt="Training Programme 13">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-14.jpeg"
+                                   data-pswp-caption="Delegation — Image 14">
+                                    <img src="assets/image/service-commission/sc-img-14.jpeg" alt="Delegation 14">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-15.jpeg"
+                                   data-pswp-caption="First Year Anniversary for 7th Assembly — Image 15">
+                                    <img src="assets/image/service-commission/sc-img-15.jpeg" alt="First Year Anniversary for 7th Assembly - 15">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-16.jpg"
+                                   data-pswp-caption="Visit — Image 16">
+                                    <img src="assets/image/service-commission/sc-img-16.jpg" alt="Visit 16">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-17.jpeg"
+                                   data-pswp-caption="Session — Image 17">
+                                    <img src="assets/image/service-commission/sc-img-17.jpeg" alt="Session 17">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-18.jpeg"
+                                   data-pswp-caption="Workshop — Image 18">
+                                    <img src="assets/image/service-commission/sc-img-18.jpeg" alt="Workshop 18">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-19.jpg"
+                                   data-pswp-caption="Committee meeting — Image 19">
+                                    <img src="assets/image/service-commission/sc-img-19.jpg" alt="Committee meeting 19">
+                                </a>
+                            </div>
+                            <div class="gallery-item">
+                                <a href="assets/image/service-commission/sc-img-20.jpg"
+                                   data-pswp-caption="Event highlight — Image 20">
+                                    <img src="assets/image/service-commission/sc-img-20.jpg" alt="Event highlight 20">
+                                </a>
+                            </div>
+                        </div><!-- .gallery -->
+
+                    </div><!-- about-one-inner -->
+                </div><!--col-lg-6-->
+            </div><!-- row -->
+        </div><!-- container -->
+    </section><!--about-one-section-->
 
 
 </div><!--page-wrapper-->		
 <section class="footer">
-	<div class="footer-inner">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="footer-widget-logo">
-						<a href="index.html"><img src="assets/image/ekha-sc-logo-white.png" class="img-fluid" alt="img-25"></a>
-					</div><!-- footer-widget-logo -->
-					<div class="footer-widget-text">
-						<p>Responsive and Responsible Legislation</p>
-					</div><!-- footer-widget-text -->
-					<div class="footer-widget-socials">
-						<!-- <a href="#"><i class="fa-brands fa-youtube"></i></a>
-						<a href="#"><i class="fa-brands fa-facebook"></i></a>
-						<a href="#"><i class="fa-brands fa-twitter"></i></a>
-						<a href="#"><i class="fa-brands fa-instagram"></i></a> -->
-					</div><!-- footer-widget-socials -->
-				</div><!--col-lg-4-->
-				<div class="col-lg-3">
-					<div class="footer-widget">
-						<div class="footer-widget-explore">
-							<h4 class="footer-widget-title">Explore</h4>
-							<ul class="list-unstyled">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About us</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
-							</ul><!-- list-unstyled -->
-						</div><!-- footer-widget-explore -->
-					</div><!--footer-widget-->
-				</div><!--col-lg-3-->
-				<div class="col-lg-2">
-					<div class="footer-widget">
-						<div class="footer-widget-department">
-							<h4 class="footer-widget-title">Departments</h4>
-							<ul class="list-unstyled">
-								<li><a href="javascript:void(0)">Admin &amp; Supply</a></li>
-								<li><a href="javascript:void(0)">Finance &amp; Accounts</a></li>
-								<li><a href="javascript:void(0)">Budget Planning, Research &amp; Statistics</a></li>
-								<li><a href="javascript:void(0)">Training &amp; Manpower Development</a></li>
-								<li><a href="javascript:void(0)">Department of Information</a></li>
-								<li><a href="javascript:void(0)">Procurement Department</a></li>
-								<li><a href="javascript:void(0)">Audit Department</a></li>
-								<li><a href="javascript:void(0)">Personnel &amp; Establishment Department</a></li>
-							</ul><!-- list-unstyled -->
-						</div><!-- footer-widget-department -->
-					</div><!--footer-widget-->
-				</div><!--col-lg-2-->
-				<div class="col-lg-3">
-					<div class="footer-widget">
-						<div class="footer-widget-contact">
-							<h4 class="footer-widget-title">Contact</h4>
-							<p>House of Assembly Commission,
-								Assembly Complex, Secretariat,
-								Ado-Ekiti</p>
-						</div><!-- footer-widget-contact -->
-						<div class="footer-widget-contact-list">
-							<i class="fa-solid fa-envelope"></i>
-							<div class="footer-widget-contact-item">
-								<a href="mailto: servicecommission@hoa.ek.gov.ng"> servicecommission@hoa.ek.gov.ng</a>
-							</div><!-- footer-widget-contact-item -->
-						</div><!-- footer-widget-contact-list -->
-						<div class="footer-widget-contact-list">
-							<i class="fa-solid fa-phone"></i>
-							<div class="footer-widget-contact-item">
-								<a href="tel:+2348063279257">+234 8063279257</a>
-							</div><!-- footer-widget-contact-item -->
-						</div><!-- footer-widget-contact-list -->
-					</div><!--footer-widget-->
-				</div><!--col-lg-3-->
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!--footer-inner-->
-	<div class="bottom-footer">
-		<div class="conatiner">
-			<p>© Copyright 2025 by EKHA ICT Department</p>
-		</div><!-- container -->
-	</div><!--bottom-footer-->
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-widget-logo">
+                        <a href="index.html"><img src="assets/image/ekha-sc-logo-white.png" class="img-fluid" alt="img-25"></a>
+                    </div><!-- footer-widget-logo -->
+                    <div class="footer-widget-text">
+                        <p>Responsive and Responsible Legislation</p>
+                    </div><!-- footer-widget-text -->
+                    <div class="footer-widget-socials">
+                    </div><!-- footer-widget-socials -->
+                </div><!--col-lg-4-->
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <div class="footer-widget-explore">
+                            <h4 class="footer-widget-title">Explore</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                            </ul><!-- list-unstyled -->
+                        </div><!-- footer-widget-explore -->
+                    </div><!--footer-widget-->
+                </div><!--col-lg-3-->
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <div class="footer-widget-department">
+                            <h4 class="footer-widget-title">Departments</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="javascript:void(0)">Admin &amp; Supply</a></li>
+                                <li><a href="javascript:void(0)">Finance &amp; Accounts</a></li>
+                                <li><a href="javascript:void(0)">Budget Planning, Research &amp; Statistics</a></li>
+                                <li><a href="javascript:void(0)">Training &amp; Manpower Development</a></li>
+                                <li><a href="javascript:void(0)">Department of Information</a></li>
+                                <li><a href="javascript:void(0)">Procurement Department</a></li>
+                                <li><a href="javascript:void(0)">Audit Department</a></li>
+                                <li><a href="javascript:void(0)">Personnel &amp; Establishment Department</a></li>
+                            </ul><!-- list-unstyled -->
+                        </div><!-- footer-widget-department -->
+                    </div><!--footer-widget-->
+                </div><!--col-lg-2-->
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <div class="footer-widget-contact">
+                            <h4 class="footer-widget-title">Contact</h4>
+                            <p>House of Assembly Commission,
+                                Assembly Complex, Secretariat,
+                                Ado-Ekiti</p>
+                        </div><!-- footer-widget-contact -->
+                        <div class="footer-widget-contact-list">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="footer-widget-contact-item">
+                                <a href="mailto: servicecommission@hoa.ek.gov.ng"> servicecommission@hoa.ek.gov.ng</a>
+                            </div><!-- footer-widget-contact-item -->
+                        </div><!-- footer-widget-contact-list -->
+                        <div class="footer-widget-contact-list">
+                            <i class="fa-solid fa-phone"></i>
+                            <div class="footer-widget-contact-item">
+                                <a href="tel:+2348063279257">+234 8063279257</a>
+                            </div><!-- footer-widget-contact-item -->
+                        </div><!-- footer-widget-contact-list -->
+                    </div><!--footer-widget-->
+                </div><!--col-lg-3-->
+            </div><!-- row -->
+        </div><!-- container -->
+    </div><!--footer-inner-->
+    <div class="bottom-footer">
+        <div class="conatiner">
+            <p>© Copyright 2025 by EKHA ICT Department</p>
+        </div><!-- container -->
+    </div><!--bottom-footer-->
 </section><!--footer-->
 <div class="mobile-nav-wrapper">
-	<div class="mobile-nav-overlay mobile-nav-toggler"></div><!-- mobile-nav-overlay -->
-	<div class="mobile-nav-content">
-		<a href="#" class="mobile-nav-close mobile-nav-toggler">
-			<span></span>
-			<span></span>
-		</a><!-- mobile-nav-close -->
-		<div class="logo-box">
-			<a href="index.html"><img src="assets/image/ekha-sc-logo-white.pngg" width="160" height="40" alt="204"></a>
-		</div><!-- logo-box -->
-		<div class="mobile-nav-container"></div><!-- mobile-nav-container -->
-		<ul class="mobile-nav-contact list-unstyled">
-			<li>
-				<i class="fa-solid fa-phone"></i>
-				<a href="tel:+2348063279257">+234 8063279257</a>
-			</li><!-- li -->
-			<li>
-				<i class="fa-solid fa-envelope"></i>
-				<a href="mailto: servicecommission@hoa.ek.gov.ng"> servicecommission@hoa.ek.gov.ng</a>
-			</li><!-- li -->
-			<li>
-				<i class="fa-solid fa-map-marker-alt"></i>
-				House of Assembly Commission,Assembly Complex, Secretariat, Ado-Ekiti
-			</li><!-- li -->
-		</ul><!-- mobile-nav-contact -->
-	</div><!-- mobile-nav-content -->
+    <div class="mobile-nav-overlay mobile-nav-toggler"></div><!-- mobile-nav-overlay -->
+    <div class="mobile-nav-content">
+        <a href="#" class="mobile-nav-close mobile-nav-toggler">
+            <span></span>
+            <span></span>
+        </a><!-- mobile-nav-close -->
+        <div class="logo-box">
+            <a href="index.html"><img src="assets/image/ekha-sc-logo-white.png" width="160" height="40" alt="204"></a>
+        </div><!-- logo-box -->
+        <div class="mobile-nav-container"></div><!-- mobile-nav-container -->
+        <ul class="mobile-nav-contact list-unstyled">
+            <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+2348063279257">+234 8063279257</a>
+            </li><!-- li -->
+            <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:servicecommission@hoa.ek.gov.ng">servicecommission@hoa.ek.gov.ng</a>
+            </li><!-- li -->
+            <li>
+                <i class="fa-solid fa-map-marker-alt"></i>
+                House of Assembly Commission,Assembly Complex, Secretariat, Ado-Ekiti
+            </li><!-- li -->
+        </ul><!-- mobile-nav-contact -->
+    </div><!-- mobile-nav-content -->
 </div><!-- mobile-nav-wrapper -->
 <!--footer  -->
 <!--footer  -->
 <div class="mobile-nav-wrapper">
-	<div class="mobile-nav-overlay mobile-nav-toggler"></div><!-- mobile-nav-overlay -->
-	<div class="mobile-nav-content">
-		<a href="#" class="mobile-nav-close mobile-nav-toggler">
-			<span></span>
-			<span></span>
-		</a><!-- mobile-nav-close -->
-		<div class="logo-box">
-			<a href="index.html"><img src="assets/image/ekha-sc-logo-white.pngg" width="160" height="40" alt="204"></a>
-		</div><!-- logo-box -->
-		<div class="mobile-nav-container"></div><!-- mobile-nav-container -->
-		<ul class="mobile-nav-contact list-unstyled">
-			<li>
-				<i class="fa-solid fa-phone"></i>
-				<a href="tel:+2348063279257">+234 8063279257</a>
-			</li><!-- li -->
-			<li>
-				<i class="fa-solid fa-envelope"></i>
-				<a href="mailto:servicecommission@hoa.ek.gov.ng">servicecommission@hoa.ek.gov.ng</a>
-			</li><!-- li -->
-			<li>
-				<i class="fa-solid fa-map-marker-alt"></i>
-				House of Assembly Commission,Assembly Complex, Secretariat, Ado-Ekiti
-			</li><!-- li -->
-		</ul><!-- mobile-nav-contact -->
-		<ul class="mobile-nav-social list-unstyled">
-			<!-- <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-			<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-			<li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
-			<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li> -->
-		</ul><!-- mobile-nav-social -->
-	</div><!-- mobile-nav-content -->
+    <div class="mobile-nav-overlay mobile-nav-toggler"></div><!-- mobile-nav-overlay -->
+    <div class="mobile-nav-content">
+        <a href="#" class="mobile-nav-close mobile-nav-toggler">
+            <span></span>
+            <span></span>
+        </a><!-- mobile-nav-close -->
+        <div class="logo-box">
+            <a href="index.html"><img src="assets/image/ekha-sc-logo-white.png" width="160" height="40" alt="204"></a>
+        </div><!-- logo-box -->
+        <div class="mobile-nav-container"></div><!-- mobile-nav-container -->
+        <ul class="mobile-nav-contact list-unstyled">
+            <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+2348063279257">+234 8063279257</a>
+            </li><!-- li -->
+            <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:servicecommission@hoa.ek.gov.ng">servicecommission@hoa.ek.gov.ng</a>
+            </li><!-- li -->
+            <li>
+                <i class="fa-solid fa-map-marker-alt"></i>
+                House of Assembly Commission,Assembly Complex, Secretariat, Ado-Ekiti
+            </li><!-- li -->
+        </ul><!-- mobile-nav-contact -->
+        <ul class="mobile-nav-social list-unstyled">
+        </ul><!-- mobile-nav-social -->
+    </div><!-- mobile-nav-content -->
 </div><!-- mobile-nav-wrapper -->
 <div class="search-popup">
-	<div class="search-popup-overlay search-toggler"></div><!-- search-popup-overlay -->
-	<div class="search-popup-content">
-		<form action="#">
-			<label for="search" class="sr-only">search here</label><!-- sr-only -->
-			<input type="text" id="search" placeholder="Search Here...">
-			<button type="submit" aria-label="search submit" class="search-btn">
-				<span><i class="flaticon-search-interface-symbol"></i></span>
-			</button><!-- search-btn -->
-		</form><!-- form -->
-	</div><!-- search-popup-content -->
+    <div class="search-popup-overlay search-toggler"></div><!-- search-popup-overlay -->
+    <div class="search-popup-content">
+        <form action="#">
+            <label for="search" class="sr-only">search here</label><!-- sr-only -->
+            <input type="text" id="search" placeholder="Search Here...">
+            <button type="submit" aria-label="search submit" class="search-btn">
+                <span><i class="flaticon-search-interface-symbol"></i></span>
+            </button><!-- search-btn -->
+        </form><!-- form -->
+    </div><!-- search-popup-content -->
 </div><!-- search-popup -->
 <a href="#" class="scroll-to-top scroll-to-target" data-target="html"><i class="fa-solid fa-arrow-up"></i></a>
 <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -416,6 +458,8 @@
 <script src="assets/vendor/counter-up/jquery.counterup.min.js"></script>
 <script src="assets/vendor/youtube-popup/youtube-popup.jquery.js"></script>
 <script src="assets/js/theme.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<!-- PhotoSwipe (module) + Dynamic Caption plugin (module) - local -->
+<script type="module" src="assets/js/photoswipemain.js"></script>
+
 </body>
 </html>
