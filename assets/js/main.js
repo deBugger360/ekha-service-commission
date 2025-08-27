@@ -33,6 +33,11 @@
       el.textContent = value || '—';
     };
 
+    //to title case
+    function toTitleCase(str) {
+        return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
+
     // image
     const imgEl = document.getElementById('commissioner-image');
     if (imgEl) {
@@ -43,6 +48,7 @@
     // basic fields
     setText('commissioner-name', commissioner.full_name);
     setText('commissioner-position', commissioner.current_position);
+    setText('commissioner-headername', toTitleCase(commissioner.full_name));
 
     // --- banner short name (team-details-name) -> first name after "Hon." / "Hon. (Mrs)" ---
     const bannerNameEl = document.getElementById('team-name'); // element added manually in markup
