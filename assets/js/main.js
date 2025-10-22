@@ -41,7 +41,7 @@
     // image
     const imgEl = document.getElementById('commissioner-image');
     if (imgEl) {
-      imgEl.src = commissioner.user_avatar || 'assets/image/team/chairman-service-commission.jpg';
+      imgEl.src = commissioner.user_avatar || 'assets/image/team/hon-eng-kayode-fasakin-chairman-ekha-sc.jpeg';
       imgEl.alt = commissioner.full_name || 'Commissioner';
     }
 
